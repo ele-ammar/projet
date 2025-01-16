@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte Hôtel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+</head>
+<body>
+  <form (ngSubmit)="onSubmit()">
+    <h1>Carte Hôtel</h1>
+
+    <!-- Image -->
+    <div class="form-group input-container">
+        <label for="image">Image URL</label>
+        <i class="fas fa-image"></i>
+        <input type="text" id="image" [(ngModel)]="hotel.image" name="image" placeholder="Enter image URL" required>
+      </div>
+
+    <!-- Nom de l'hôtel -->
+    <div class="form-group input-container">
+      <label for="nom">Nom de l'Hôtel</label>
+      <i class="fas fa-hotel"></i>
+      <input type="text" id="nom" [(ngModel)]="hotel.nom" name="nom" placeholder="Nom de l'hôtel" required>
+    </div>
+
+    <!-- Classement -->
+    <div class="form-group input-container">
+      <label for="star">Classement</label>
+      <i class="fas fa-star"></i>
+      <input type="text" id="star" [(ngModel)]="hotel.classement" name="classement" placeholder="Exemple : 5 étoiles" required>
+    </div>
+
+    <!-- Localisation -->
+    <div class="form-group input-container">
+      <label for="localisation">Localisation</label>
+      <i class="fas fa-map-marker-alt"></i>
+      <input type="text" id="localisation" [(ngModel)]="hotel.localisation" name="localisation" placeholder="Adresse de l'hôtel" required>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group input-container">
+      <label for="description">Description</label>
+      <i class="fas fa-info-circle"></i>
+      <textarea id="description" [(ngModel)]="hotel.description" name="description" placeholder="Courte description de l'hôtel" required></textarea>
+    </div>
+
+    <!-- Équipements -->
+    <div class="form-group input-container">
+        <label for="equipement">Équipements</label>
+        <i class="fas fa-cogs"></i>
+        <input type="text" id="equipement" [(ngModel)]="hotel.equipement" name="equipement" placeholder="Entrez les équipements (séparés par des virgules)" required>
+      </div>
+
+    <!-- Prix -->
+    <div class="form-group input-container">
+      <label for="prix">Prix</label>
+      <i class="fas fa-dollar-sign"></i>
+      <input type="text" id="prix" [(ngModel)]="hotel.prix" name="prix" placeholder="Prix par nuit" required>
+    </div>
+
+    <!-- Lien pour les détails -->
+    <div class="form-group input-container">
+        <label for="details_url">Lien vers les détails</label>
+        <i class="fas fa-link"></i>
+        <input type="text" id="details_url" [(ngModel)]="hotel.btn_details" name="details_url" placeholder="Entrez l'URL des détails" required>
+      </div>
+
+    <!-- Submit -->
+    <input type="submit" value="Enregistrer">
+  </form>
+</body>
+</html>
