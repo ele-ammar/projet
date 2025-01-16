@@ -1,37 +1,46 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize');
 
-// Define the Booking model
-const Booking = sequelize.define('Booking', {
+const hotelcity = sequelize.define('hotelcity', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
+  image: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
+  
+  titre_ville: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  datetime: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  destination: {
+  description_ville: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  message: {
-    type: DataTypes.TEXT,
-    allowNull: true, // Optional field
+  titre_hotel: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  
   },
-}, 
-{
-  tableName: 'bookings', // Table name in the database
-  timestamps: true, // Adds createdAt and updatedAt fields
-});
+  hotels: {
+    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    allowNull: false,
+  },
 
-module.exports = Booking;
+  questions: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+
+},
+
+{
+  tableName: 'hotelcity', // Table name in the database
+  timestamps: true, // Adds createdAt and updatedAt fields
+}
+);
+
+module.exports = hotelcity;
